@@ -1,0 +1,36 @@
+# Environment
+.env
+*.env
+.env.local
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Node
+node_modules/
+dist/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# DB / local storage
+*.db
+*.sqlite
+
+# IDE
+.vscode/
+.idea/
+
+# Dev utilities with hardcoded credentials
+backend/link_user.py
