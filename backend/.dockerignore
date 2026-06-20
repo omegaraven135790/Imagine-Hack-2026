@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+.env
+.env.*
+link_user.py
