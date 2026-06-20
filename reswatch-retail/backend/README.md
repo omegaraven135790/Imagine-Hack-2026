@@ -6,11 +6,16 @@ FastAPI backend for the transportation section of ResWatch Retail.
 
 - Project REST URL: `https://uccwiuglffjrecsmbnwu.supabase.co/rest/v1/`
 - Project URL: `https://uccwiuglffjrecsmbnwu.supabase.co`
-- Schema migration: `migrations/20260620_transportation_schema.sql`
+
+The transportation schema is defined in `supabase_transportation_setup.sql`.
+It is additive and safe to re-run, and it is the file to apply in Supabase SQL Editor or `psql`.
 
 The REST URL can read and write rows after tables and RLS policies exist, but it cannot
-create tables. Run the migration through Supabase SQL Editor, Supabase CLI, `psql`, or a
-Supabase MCP tool with SQL migration support.
+create tables. Run the setup script through Supabase SQL Editor, Supabase CLI, `psql`, or a
+Supabase MCP tool with SQL support.
+
+The backend connects through `DATABASE_URL` and will fail fast on startup if the database
+is unreachable or misconfigured.
 
 ## Local Run
 
@@ -21,6 +26,10 @@ C:\Users\prema\AppData\Local\Programs\Python\Python312\python.exe -m uvicorn mai
 ```
 
 Open `http://localhost:8000/docs`.
+
+Database health check:
+
+- `GET /health/db`
 
 ## API Scope
 
