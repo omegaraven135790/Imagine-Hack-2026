@@ -14,7 +14,10 @@ settings = get_settings()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    create_db_and_tables()
+    try:
+        create_db_and_tables()
+    except Exception as exc:
+        print(f"[startup] database check skipped: {exc}")
     yield
 
 

@@ -17,6 +17,9 @@ Supabase MCP tool with SQL support.
 The backend connects through `DATABASE_URL` and will fail fast on startup if the database
 is unreachable or misconfigured.
 
+The transportation demo dashboard now reads from Supabase REST and can still start even if
+the direct Postgres URL is unavailable. Use the demo seed endpoint to populate the tables.
+
 ## Local Run
 
 ```powershell
@@ -30,6 +33,11 @@ Open `http://localhost:8000/docs`.
 Database health check:
 
 - `GET /health/db`
+
+Demo dashboard and seed:
+
+- `GET /api/transportation/demo-ui`
+- `POST /api/transportation/demo/seed`
 
 ## API Scope
 
