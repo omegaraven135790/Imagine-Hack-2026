@@ -9,9 +9,6 @@ services:
       - "8000:8000"
     env_file:
       - .env
-    dns:
-      - 8.8.8.8
-      - 8.8.4.4
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 10s
@@ -40,8 +37,3 @@ services:
 networks:
   reswatch-retail-net:
     driver: bridge
-    enable_ipv6: true
-    ipam:
-      config:
-        - subnet: "172.21.0.0/16"
-        - subnet: "2001:db8:b::/64"

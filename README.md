@@ -9,8 +9,7 @@ An AI-assisted resource management platform for Malaysian retail SMEs. Monitors 
 ## Quick Start
 
 ### Prerequisites
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) running
-- A `.env` file with your Supabase credentials (copy from `.env.example`)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) running (IPv6 daemon config NOT required — uses IPv4 pooler)
 
 ### One-click launch (Windows)
 
@@ -19,18 +18,21 @@ Double-click **`start.bat`** in the project root. It will:
 2. Wait for the backend health check to pass
 3. Open your browser at **http://localhost:3000** automatically
 
+> ✅ **No setup needed** — a working `.env` is included in this branch and demo data is already seeded in the shared Supabase project. Just clone and run.
+
 ---
 
 ## Manual Setup
 
 ```bash
-# 1 — Copy environment file and fill in your Supabase values
+# 1 — (Optional) Bring your own Supabase project
+#     Copy .env.example → .env and fill in your credentials
 copy .env.example .env
 
 # 2 — Start all services
 docker compose up --build -d
 
-# 3 — Seed demo data (first run only)
+# 3 — (Optional) Seed demo data into your own DB
 docker exec -it reswatch-retail-backend python seed.py --email your@email.com
 
 # 4 — Open the app
@@ -60,7 +62,8 @@ reswatch-retail/
 │   └── seed.py           90-day demo data seeder
 ├── frontend/             React 18 + Vite + TailwindCSS
 │   └── src/pages/        Dashboard, Energy, Inventory, Footfall, Forecasts,
-│                         Anomalies, Waste, Schedule
+│                         Anomalies, Waste, Schedule, Insights, Transportation,
+│                         Settings
 ├── docker-compose.yml
 ├── .env.example
 └── start.bat             One-click Windows launcher
@@ -93,7 +96,7 @@ reswatch-retail/
 
 ## Environment Variables
 
-Copy `.env.example` → `.env`:
+A working `.env` is included in this branch for demo use. To run your own instance, copy `.env.example` → `.env` and fill in your Supabase values (use the IPv4 Session pooler URL from **Supabase → Settings → Database → Connection pooling**).
 
 | Variable | Description |
 |----------|-------------|

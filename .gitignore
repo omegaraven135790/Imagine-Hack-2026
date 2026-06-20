@@ -1,6 +1,4 @@
-# Environment
-.env
-*.env
+# Environment — .env.local only; .env is committed on this branch for demo use
 .env.local
 
 # Python

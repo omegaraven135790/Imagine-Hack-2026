@@ -9,24 +9,24 @@ import {
   Trash2,
   Calendar,
   Lightbulb,
-  FileText,
+  Truck,
   Settings,
   ShoppingBag,
 } from 'lucide-react'
 import { supabase } from '@/lib/supabase'
 
 const NAV = [
-  { to: '/',           label: 'Dashboard',        Icon: LayoutDashboard },
-  { to: '/energy',     label: 'Energy & Water',   Icon: Zap },
-  { to: '/inventory',  label: 'Inventory',        Icon: ShoppingCart },
-  { to: '/footfall',   label: 'Footfall & Sales', Icon: Users },
-  { to: '/forecasts',  label: 'Forecasts',        Icon: TrendingUp },
-  { to: '/anomalies',  label: 'Anomalies',        Icon: AlertTriangle },
-  { to: '/waste',      label: 'Waste & Savings',  Icon: Trash2 },
-  { to: '/schedule',   label: 'Schedule',         Icon: Calendar },
-  { to: '/insights',   label: 'Insights',         Icon: Lightbulb },
-  { to: '/reports',    label: 'Reports',          Icon: FileText },
-  { to: '/settings',   label: 'Settings',         Icon: Settings },
+  { to: '/',               label: 'Dashboard',        Icon: LayoutDashboard },
+  { to: '/energy',         label: 'Energy & Water',   Icon: Zap },
+  { to: '/inventory',      label: 'Inventory',        Icon: ShoppingCart },
+  { to: '/footfall',       label: 'Footfall & Sales', Icon: Users },
+  { to: '/forecasts',      label: 'Forecasts',        Icon: TrendingUp },
+  { to: '/anomalies',      label: 'Anomalies',        Icon: AlertTriangle },
+  { to: '/waste',          label: 'Waste & Savings',  Icon: Trash2 },
+  { to: '/schedule',       label: 'Schedule',         Icon: Calendar },
+  { to: '/insights',       label: 'Insights',         Icon: Lightbulb },
+  { to: '/transportation', label: 'Transportation',   Icon: Truck },
+  { to: '/settings',       label: 'Settings',         Icon: Settings },
 ] as const
 
 export default function Sidebar() {
