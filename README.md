@@ -54,3 +54,8 @@ Why was TRACK 3 chosen?
 - The open-end nature of this work allowed more creativity and enjoyment within the development process.
 - The environmental impact of this work provided a strong sense of purpose and natural motivation.
 - Leveraging data analytics as a core project component fueled our curiosity and analytical interest.
+
+Canva Link:
+
+https://www.canva.com/design/DAHNFIJXLkg/kuWO5M0GwRfPs917eJQnvQ/edit?ui=e30
+
