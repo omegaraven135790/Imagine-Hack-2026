@@ -13,8 +13,8 @@ services:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 10s
       timeout: 5s
-      start_period: 15s
-      retries: 5
+      start_period: 45s
+      retries: 8
     networks:
       - reswatch-retail-net
 
