@@ -37,4 +37,3 @@ services:
 networks:
   reswatch-retail-net:
     driver: bridge
-    enable_ipv6: true

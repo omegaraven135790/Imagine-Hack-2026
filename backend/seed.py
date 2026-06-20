@@ -9,23 +9,15 @@ Usage:
 
 import argparse
 import json
-import os
 import random
-import sys
 from datetime import date, datetime, timedelta, timezone
 
 import psycopg2
 import psycopg2.extras
-from dotenv import load_dotenv
 
-load_dotenv()
+from db_connect import pg_connect  # single source of truth for DB connection
 
 random.seed(42)
-
-DATABASE_URL = os.getenv("DATABASE_URL", "")
-if not DATABASE_URL:
-    print("ERROR: DATABASE_URL not set in .env")
-    sys.exit(1)
 
 ELEC_TARIFF  = 0.5443
 WATER_TARIFF = 3.51
@@ -72,15 +64,6 @@ INVENTORY = [
 ]
 
 
-def connect() -> psycopg2.extensions.connection:
-    return psycopg2.connect(
-        DATABASE_URL,
-        keepalives=1,
-        keepalives_idle=20,
-        keepalives_interval=5,
-        keepalives_count=5,
-        connect_timeout=15,
-    )
 
 
 def ev(cur, sql: str, rows: list, page_size: int = 500) -> None:
@@ -409,7 +392,7 @@ def main() -> None:
     parser.add_argument("--email", default=None)
     args = parser.parse_args()
 
-    conn = connect()
+    conn = pg_connect()
     cur = conn.cursor()
     # Disable statement timeout for this session
     conn.autocommit = True
