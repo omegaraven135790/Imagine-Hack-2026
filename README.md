@@ -24,7 +24,7 @@ Technologies Used
 - Figma was used to design the user interface.
 - ai assisted in accelerating the development process.
 - Copilot helped in the transport feature in the final product.
-- com was used as the database for this project.
+- Supabase was used as the database for this project.
 
 Challenges
 
